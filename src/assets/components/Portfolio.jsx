@@ -68,7 +68,7 @@ const PROJECTS = [
     title: "Green Africa Initiative",
     desc: "Nutrition-focused non-profit initiative tackling hunger, food waste, and malnutrition among pregnant women and infants.",
     tech: ["React", "Tailwind CSS", "Rails API"],
-    url: "https://lagosfoodbank.org",
+    url: "https://greenafricainitiative.org",
   },
 ];
 
