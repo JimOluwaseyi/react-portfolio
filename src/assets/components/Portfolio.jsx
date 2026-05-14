@@ -92,96 +92,97 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <style>{`
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
+    <>
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
-        to {
-          opacity: 1;
+
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes pulse-glow {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7);
+          }
+          50% {
+            box-shadow: 0 0 0 8px rgba(0, 255, 65, 0);
+          }
+        }
+
+        .fade-in {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .fade-in-fast {
+          animation: slideDown 0.4s ease-out forwards;
+        }
+
+        .gamer-btn {
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .gamer-btn::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.1);
+          transition: left 0.3s ease;
+          z-index: -1;
+        }
+
+        .gamer-btn:hover::before {
+          left: 100%;
+        }
+
+        .gamer-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 255, 65, 0.3);
+        }
+
+        .gamer-btn:active {
           transform: translateY(0);
         }
-      }
 
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
+        .project-card {
+          transition: all 0.3s ease;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        .project-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0, 255, 65, 0.15);
         }
-      }
 
-      @keyframes pulse-glow {
-        0%, 100% {
-          box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7);
+        .theme-toggle {
+          transition: all 0.3s ease;
         }
-        50% {
-          box-shadow: 0 0 0 8px rgba(0, 255, 65, 0);
+
+        .theme-toggle:hover {
+          transform: scale(1.05);
         }
-      }
+      `}</style>
 
-      .fade-in {
-        animation: fadeInUp 0.6s ease-out forwards;
-      }
-
-      .fade-in-fast {
-        animation: slideDown 0.4s ease-out forwards;
-      }
-
-      .gamer-btn {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .gamer-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        transition: left 0.3s ease;
-        z-index: -1;
-      }
-
-      .gamer-btn:hover::before {
-        left: 100%;
-      }
-
-      .gamer-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 255, 65, 0.3);
-      }
-
-      .gamer-btn:active {
-        transform: translateY(0);
-      }
-
-      .project-card {
-        transition: all 0.3s ease;
-      }
-
-      .project-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 255, 65, 0.15);
-      }
-
-      .theme-toggle {
-        transition: all 0.3s ease;
-      }
-
-      .theme-toggle:hover {
-        transform: scale(1.05);
-      }
-    `}</style>
-
-    <div
+      <div
       className={
         dark
           ? "bg-slate-900 text-slate-100 min-h-screen transition-colors duration-300"
@@ -394,5 +395,6 @@ export default function Portfolio() {
         </footer>
       </main>
     </div>
+    </>
   );
 }
