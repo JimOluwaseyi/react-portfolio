@@ -1,7 +1,11 @@
 {
-  "name": "my-portfolio",
+  "name": "jimoh-portfolio",
+  "description": "A modern, sleek portfolio built with React, Tailwind CSS, and gamer green theme featuring scroll animations and dark/light mode.",
+  "author": "Jimoh Oluwaseyi Mayowa",
+  "repository": "https://github.com/JimOluwaseyi/react-portfolio",
+  "homepage": "https://jimoh.dev",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
